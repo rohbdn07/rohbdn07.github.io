@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+	
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -17,7 +18,8 @@
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
         <!-- main css -->
-        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/loading.css">
 		<link rel="stylesheet" href="css/responsive.css">
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156437288-1"></script>
@@ -27,10 +29,25 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-156437288-1');
+var myVar;
+  function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementsByClassName("spinner")[0].style.display = "none"; 
+  $('#myDiv').fadeIn(2000);
+   
+}
+
 </script>
 
-    </head>
-    <body>
+	</head>
+	
+	<body onload="myFunction()">
+	<div class="spinner"></div>
+	<div style="display:none;" id="myDiv">
+
         
         <!--================Header Menu Area =================-->
         <header class="header_area">
@@ -544,6 +561,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/mail-script.js"></script>
-        <script src="js/theme.js"></script>
-    </body>
+		<script src="js/theme.js"></script>
+	</div>
+	</body>
+
 </html>
